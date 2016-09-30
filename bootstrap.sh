@@ -1,14 +1,15 @@
 #!/bin/bash
 set -eux
 
-VERSION="0.7.0"
-RELEASE="20160614230104"
+VERSION="0.10.0"
+RELEASE="20160929200558"
 ARCH="x86_64"
 KERNEL="linux"
 PLATFORM="${ARCH}-${KERNEL}"
 
 sudo adduser --group hab || echo "Group 'hab' already exists"
 sudo useradd -g hab hab || echo "User 'hab' already exists"
+sudo usermod -aG hab ubuntu
 
 sudo apt-get install curl -y
 
